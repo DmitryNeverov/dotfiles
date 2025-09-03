@@ -5,8 +5,8 @@ return {
     config = function ()
         require("nvim-treesitter.configs").setup({
             -- parsers you care about
-	    ensure_installed = { "lua", "markdown", "python" },
+            ensure_installed = { "lua", "markdown", "python" },
             auto_install = true,
-	})
+        })
     end,
 }
