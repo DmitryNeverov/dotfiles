@@ -37,21 +37,28 @@ require("lazy").setup({
     -- disable luarocks since I have no luarocks-managed plugins
     rocks = { enabled = false },
 
-    -- replace icons that require nerdfont
+    -- remove icons that require nerdfont
     ui = {
         icons = {
-            cmd = "[C]",      -- commands
-            config = "[cfg]", -- plugin config
-            event = "[E]",    -- auto command events
-            ft = "[ft]",      -- filetype plugin
-            init = "[I]",     -- init function
-            keys = "[K]",     -- key mappings
-            plugin = "[P]",   -- plugin itself
-            runtime = "[R]",  -- runtime files
-            source = "[S]",   -- source dode
-            start = "[>]",    -- started plugin
-            task = "[✓]",     -- task success
-            lazy = "[L]",     -- lazy-loading plugin
+            cmd        = " ",
+            config     = "",
+            debug      = "● ",
+            event      = " ",
+            favorite   = " ",
+            ft         = " ",
+            init       = " ",
+            import     = " ",
+            keys       = " ",
+            lazy       = " ",
+            loaded     = "●",
+            not_loaded = "○",
+            plugin     = " ",
+            runtime    = " ",
+            require    = " ",
+            source     = " ",
+            start      = " ",
+            task       = "✔ ",
+            list = { "●", "➜", "★", "‒" },
         },
     },
 })
