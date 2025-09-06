@@ -1,4 +1,4 @@
--- History of undos
+-- History of undo
 return {
     "mbbill/undotree",
     config = function()
