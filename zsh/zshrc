@@ -20,6 +20,26 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Shift-tab for reverse completion navigation
 bindkey '^[[Z' reverse-menu-complete
 
+# make version control system information available
+# https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' check-for-changes true  # enables %c and %u, can be expensive
+zstyle ':vcs_info:git:*' stagedstr '%F{yellow}'  # change term colour instead of printing 'S'
+zstyle ':vcs_info:git:*' unstagedstr '%F{red}'   # change term colour instead of printing 'U'
+
+# "[branch] repo" style, with branch colour modified by changes; %f resets colour
+zstyle ':vcs_info:git:*' formats '[%F{green}%c%u%b%f] %r'
+zstyle ':vcs_info:git:*' actionformats '[%F{green}%c%u%b%f|%a] %r'
+
+# ensure prompt updates dynamically
+setopt prompt_subst
+
+# main function to run before showing prompts
+precmd () { vcs_info }
+
+RPROMPT='${vcs_info_msg_0_}'        # just the string pre-formatted by vcs_info
+PROMPT='%F{cyan}%40<..<%~%f %# '    # path in yellow, truncated to 40 chars
+
 alias la="ls -la"
 alias ll="ls -l"
 
