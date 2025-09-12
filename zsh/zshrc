@@ -17,9 +17,6 @@ export LS_COLORS="di=1;36:ln=1;35:so=1;31:pi=1;33:ex=1;32:bd=34;46:cd=34;43:su=3
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Shift-tab for reverse completion navigation
-bindkey '^[[Z' reverse-menu-complete
-
 # make version control system information available
 # https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information
 autoload -Uz vcs_info
@@ -39,6 +36,19 @@ precmd () { vcs_info }
 
 RPROMPT='${vcs_info_msg_0_}'        # just the string pre-formatted by vcs_info
 PROMPT='%F{cyan}%40<..<%~%f %# '    # path in yellow, truncated to 40 chars
+
+# zsh plugins
+#   first, `brew install antidote`
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+zstyle ':antidote:bundle' use-friendly-names on
+antidote load
+
+# Incremental search up or down from history
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+# Shift-tab for reverse completion navigation
+bindkey '^[[Z' reverse-menu-complete
 
 alias la="ls -la"
 alias ll="ls -l"
