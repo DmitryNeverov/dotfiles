@@ -8,6 +8,18 @@ compinit
 autoload -Uz colors
 colors
 
+# enable colours for ls; good converter https://geoff.greer.fm/lscolors/
+export CLICOLOR=1
+export LSCOLORS="GxFxBxDxCxegedabagacad"  # 11 chars for BSD ls (ships with macOS)
+export LS_COLORS="di=1;36:ln=1;35:so=1;31:pi=1;33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # equivalent
+
+# Highlight selected completion option
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Shift-tab for reverse completion navigation
+bindkey '^[[Z' reverse-menu-complete
+
 alias la="ls -la"
 alias ll="ls -l"
 
