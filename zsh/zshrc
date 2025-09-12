@@ -4,6 +4,9 @@ mkdir -p "$ZSH_CACHE_DIR"
 autoload -U compinit
 compinit
 
+export LANG=en_AU.UTF-8
+export LC_ALL=en_AU.UTF-8
+
 # enable colours
 autoload -Uz colors
 colors
