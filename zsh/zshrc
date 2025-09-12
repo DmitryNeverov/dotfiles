@@ -1,0 +1,16 @@
+# enable autocompletion, store cache in a folder instead of cluttering $HOME
+export ZSH_CACHE_DIR="$HOME/.zsh_cache"
+mkdir -p "$ZSH_CACHE_DIR"
+autoload -U compinit
+compinit
+
+# enable colours
+autoload -Uz colors
+colors
+
+alias la="ls -la"
+alias ll="ls -l"
+
+# tell GPG about the terminal, for terminal-based pinentry
+# although usually we use GUI one like `pinentry-mac`
+export GPG_TTY=$(tty)
