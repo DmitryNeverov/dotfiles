@@ -31,7 +31,41 @@ return {
         appearance = {
           -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
           -- Adjusts spacing to ensure icons are aligned
-          nerd_font_variant = 'mono'
+          nerd_font_variant = 'mono',
+
+          -- replace nerd fonts with unicode characters
+          kind_icons = {
+            Text          = "T",
+            Method        = "ƒ",
+            Function      = "λ",
+            Constructor   = "ℂ",
+
+            Field         = ".",
+            Variable      = "𝑥",
+            Property      = "p",
+
+            Class         = "C",
+            Interface     = "I",
+            Struct        = "S",
+            Module        = "M",
+
+            Unit          = "μ",
+            Value         = "∴",
+            Enum          = "E",
+            EnumMember    = "e",
+
+            Keyword       = "!",
+            Constant      = "π",
+
+            Snippet       = "~",
+            Color         = "#",
+            File          = "F",
+            Reference     = "&",
+            Folder        = "D",
+            Event         = "*",
+            Operator      = "±",
+            TypeParameter = "τ",
+          },
         },
 
         -- (Default) Only show the documentation popup when manually triggered
