@@ -4,6 +4,7 @@ vim.g.python3_host_prog = vim.fn.expand("~/Venvs/nvim/bin/python")
 -- netrw explorer settings
 vim.g.netrw_banner = 0         -- disable the header at the top
 vim.g.netrw_liststyle = 3      -- show a tree-style listing instead of default
+vim.g.netrw_altfile = 1        -- let :b# (or C-^) go back to previous file and not to netrw listing
 
 -- indentation
 vim.opt.expandtab = true       -- spaces instead of tab characters

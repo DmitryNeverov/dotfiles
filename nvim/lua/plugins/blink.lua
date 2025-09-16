@@ -20,7 +20,7 @@ return {
         -- 'none' for no mappings
         --
         -- All presets have the following mappings:
-        -- C-space: Open menu or open docs if already open
+        -- C-space: Open menu or open docs if already open | NOTE: This clashes with macOS defaults
         -- C-n/C-p or Up/Down: Select next/previous item
         -- C-e: Hide menu
         -- C-k: Toggle signature help (if signature.enabled = true)
