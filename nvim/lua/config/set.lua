@@ -25,9 +25,5 @@ vim.opt.scrolloff = 8          -- keep 8 lines above or below cursor while scrol
 vim.opt.hlsearch = true        -- highlight all matches after search
 vim.opt.incsearch = true       -- incremental search as you type
 
--- spelling
-vim.opt.spell = true           -- do spellcheck
-vim.opt.spelllang = "en_au"    -- Australian English
-
 -- misc
 vim.opt.updatetime = 100       -- 100ms before noting cursor holding (for various context plugins)
