@@ -10,6 +10,7 @@ vim.keymap.set('n', "<C-u>", "<C-u>zz")
 vim.keymap.set('n', "n", "nzzzv")
 vim.keymap.set('n', "N", "Nzzzv")
 vim.keymap.set('n', "J", "mzJ`z")
+vim.keymap.set('n', "<C-j>", "mzi<CR><Esc>`z") -- break line at cursor
 
 -- yanks to the clipboard register
 vim.keymap.set('n', "<leader>y", "\"+y")
