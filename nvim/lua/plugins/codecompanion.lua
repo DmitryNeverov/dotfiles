@@ -16,7 +16,22 @@ return {
                     model = "qwen2.5-coder",
                 }
             },
-        }
+        },
+        -- icons MUST be one character and have a trailing space, otherwise chat context will break
+        display = {
+            chat = {
+                window = { layout = "buffer" },
+                icons = {
+                    buffer_pin       = "! ",
+                    buffer_watch     = ". ",
+                    chat_fold        = "> ",
+                    tool_pending     = "… ",
+                    tool_in_progress = "⏱ ",
+                    tool_failure     = "✖ ",
+                    tool_success     = "✔ ",
+                },
+            },
+        },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
