@@ -27,3 +27,6 @@ vim.opt.incsearch = true       -- incremental search as you type
 
 -- misc
 vim.opt.updatetime = 100       -- 100ms before noting cursor holding (for various context plugins)
+
+-- tweak colours
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- inherit background from the terminal
